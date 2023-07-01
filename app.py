@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_extras.add_vertical_space import add_vertical_space
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
@@ -9,6 +10,14 @@ from langchain.callbacks import get_openai_callback
 import pickle
 from dotenv import load_dotenv
 import os
+
+# sidebar
+with st.sidebar:
+    st.write("## Talk to PDFs")
+    st.markdown("### Ask questions about Compliance, Accounting, and anything else.")
+
+    add_vertical_space(2)
+    st.write("## About")
 
 
 def main():
