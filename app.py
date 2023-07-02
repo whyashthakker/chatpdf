@@ -41,7 +41,7 @@ def main():
             unsafe_allow_html=True,
         )
         api_key_confirmation = st.checkbox(
-            "Please note, the API code will cost you money for using OpenAI API. We're using GPT-3.5 Turbo Model. Please take a note of this. I understand and accept."
+            "Please note, each question will cost you money for using OpenAI API. We're using GPT-3.5 Turbo Model. If you don't know how this works. Please consider reading about it before using it. I understand and accept."
         )
         if not api_key_confirmation:
             return
