@@ -22,6 +22,9 @@ with st.sidebar:
 
 def main():
     st.header("OPEN SOURCE CHAT PDF APP.")
+    st.write(
+        "Get your OPENAI API KEY: https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key"
+    )
     OPENAI_API_KEY = st.text_input(
         "Enter your OPEN AI API key", type="password"
     )  # Add this line
