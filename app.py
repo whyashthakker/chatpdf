@@ -40,6 +40,10 @@ def main():
             "**⚠️ Please note:** Your API key is not stored or sent anywhere. Entire code is open source, see this: https://github.com/whyashthakker/chatpdf, drop a ⭐️. **⚠️ ALSO NOTE:** each question will cost you money for using OpenAI API. We're using GPT-3.5 Turbo Model. If you don't know how this works. Please consider reading about it before using it.",
             unsafe_allow_html=True,
         )
+        st.markdown(
+            "**⚠️ ALSO NOTE:** each question will cost you money for using OpenAI API. We're using GPT-3.5 Turbo Model. If you don't know how this works. Please consider reading about it before using it.",
+            unsafe_allow_html=True,
+        )
         api_key_confirmation = st.checkbox(
             "Please note, each question will cost you money for using OpenAI API. We're using GPT-3.5 Turbo Model. If you don't know how this works. Please consider reading about it before using it. I understand and accept."
         )
