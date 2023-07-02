@@ -83,16 +83,6 @@ def main():
         st.write(query)
 
         if query:
-            st.markdown(
-                "**⚠️ Please note:** Each question will incur costs depending on the size of the PDF and the complexity of the question.",
-                unsafe_allow_html=True,
-            )
-            query_confirmation = st.checkbox(
-                "Each Question will cost you money per openai guidelines. We're using GPT-3.5 Turbo Model. I understand and accept the costs."
-            )
-            if not query_confirmation:
-                return
-
             docs = VectorStore.similarity_search(query=query, k=3)
             llm = OpenAI(
                 model_name="gpt-3.5-turbo",
