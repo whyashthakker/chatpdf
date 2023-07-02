@@ -13,18 +13,16 @@ import os
 
 # sidebar
 with st.sidebar:
-    st.write("## AI-Powered PDF Assistant")
+    st.write("## 🧠 AI-Powered PDF Assistant")
+    st.markdown("### Extract insights from your PDFs like never before. 🚀")
     st.markdown(
-        "### Query your Compliance, Accounting, and other Business PDFs like never before."
-    )
-    st.markdown(
-        "Our smart PDF assistant uses state-of-the-art AI technology to extract and analyze text from your PDFs. It allows you to ask complex questions and get precise answers based on the information contained in your documents. Ideal for professionals in the field of Compliance, Accounting, Legal, and anyone else who handles data-heavy PDFs in their work."
+        "Our AI Assistant leverages state-of-the-art language models to understand and interact with your PDFs. Simply upload your documents and ask questions - from business reports to academic research, get precise answers in real-time! Ideal for anyone working with information-rich PDFs."
     )
 
     add_vertical_space(2)
-    st.write("## About AI-Powered PDF Assistant")
+    st.write("## 📘 About AI-Powered PDF Assistant")
     st.markdown(
-        "Our platform leverages the power of OpenAI's language model, offering a new level of interaction with your PDFs. We transform static documents into an interactive knowledge base where queries can be made seamlessly. From accounting principles to compliance regulations, our AI-Powered PDF Assistant will provide concise answers extracted from the content of your uploaded files."
+        "Our platform transforms static documents into an interactive knowledge base. Powered by OpenAI, we offer an intuitive way to extract information from your PDFs. Just upload, ask and get your answers! 🎯"
     )
 
 
