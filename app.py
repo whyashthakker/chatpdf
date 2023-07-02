@@ -21,10 +21,14 @@ with st.sidebar:
 
 
 def main():
-    st.header("Compliance Questions?")
+    st.header("OPEN SOURCE CHAT PDF APP.")
     OPENAI_API_KEY = st.text_input(
-        "Enter your API key", type="password"
+        "Enter your OPEN AI API key", type="password"
     )  # Add this line
+
+    st.write(
+        "Your API key is not stored or sent anywhere, entire code is open source, see this: https://github.com/whyashthakker/chatpdf, drop a ⭐️"
+    )
 
     load_dotenv()
 
