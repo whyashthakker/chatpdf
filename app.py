@@ -37,9 +37,14 @@ def main():
         "Enter your OPEN AI API key", type="password"
     )  # Add this line
 
-    st.write(
-        "Your API key is not stored or sent anywhere, entire code is open source, see this: https://github.com/whyashthakker/chatpdf, drop a ⭐️"
-    )
+    if OPENAI_API_KEY:
+        st.markdown(
+            "**⚠️ Please note:** Your API key is not stored or sent anywhere. Entire code is open source, see this: https://github.com/whyashthakker/chatpdf, drop a ⭐️",
+            unsafe_allow_html=True,
+        )
+        api_key_confirmation = st.checkbox("I understand and accept.")
+        if not api_key_confirmation:
+            return
 
     load_dotenv()
 
@@ -50,7 +55,6 @@ def main():
         st.write(pdf.name)
 
         text = ""
-
         for page in pdf_reader.pages:
             text += page.extract_text()
 
@@ -61,7 +65,6 @@ def main():
         chunks = text_splitter.split_text(text=text)
 
         # EMBEDDINGS
-
         embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
         VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
         store_name = pdf.name[:-4]
@@ -76,11 +79,20 @@ def main():
                 pickle.dump(VectorStore, f)
 
         # ACCEPT USER QUESTIONS / QUERY
-
         query = st.text_input("Let's ask questions :)")
         st.write(query)
 
         if query:
+            st.markdown(
+                "**⚠️ Please note:** Each question will incur costs depending on the size of the PDF and the complexity of the question.",
+                unsafe_allow_html=True,
+            )
+            query_confirmation = st.checkbox(
+                "Each Question will cost you money per openai guidelines. We're using GPT-3.5 Turbo Model. I understand and accept the costs."
+            )
+            if not query_confirmation:
+                return
+
             docs = VectorStore.similarity_search(query=query, k=3)
             llm = OpenAI(
                 model_name="gpt-3.5-turbo",
