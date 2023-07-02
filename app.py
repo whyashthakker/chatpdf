@@ -37,7 +37,7 @@ def main():
 
     if OPENAI_API_KEY:
         st.markdown(
-            "**⚠️ Please note:** Your API key is not stored or sent anywhere. Entire code is open source, see this: https://github.com/whyashthakker/chatpdf, drop a ⭐️. ALSO NOTE: each question will cost you money for using OpenAI API. We're using GPT-3.5 Turbo Model. If you don't know how this works. Please consider reading about it before using it.",
+            "**⚠️ Please note:** Your API key is not stored or sent anywhere. Entire code is open source, see this: https://github.com/whyashthakker/chatpdf, drop a ⭐️. **⚠️ ALSO NOTE **: each question will cost you money for using OpenAI API. We're using GPT-3.5 Turbo Model. If you don't know how this works. Please consider reading about it before using it.",
             unsafe_allow_html=True,
         )
         api_key_confirmation = st.checkbox(
