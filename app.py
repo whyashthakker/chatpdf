@@ -52,7 +52,9 @@ def main():
 
     if pdf is not None:  # check if a file was uploaded
         pdf_reader = PdfReader(pdf)
-        st.write(pdf.name)
+        st.write(
+            "need custom chatbot for your business? visit: https://www.upyogai.com/contact-us"
+        )
 
         text = ""
         for page in pdf_reader.pages:
